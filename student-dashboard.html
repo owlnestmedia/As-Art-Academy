@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | AS Art Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="dashboard-sidebar">
+            <a href="index.html" class="dashboard-brand"><span class="gradient-text">AS</span> Art</a>
+
+            <nav class="dashboard-nav">
+                <a href="#courses" class="active"><i class="fa-solid fa-graduation-cap"></i> <span>My Courses</span></a>
+                <a href="#artwork"><i class="fa-solid fa-palette"></i> <span>Post Artwork</span></a>
+                <a href="#receipts"><i class="fa-solid fa-file-invoice-dollar"></i> <span>Receipts</span></a>
+            </nav>
+
+            <a href="index.html" class="dashboard-logout"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span></a>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <h1>Student <span class="gradient-text">Dashboard</span></h1>
+                <div class="user-profile">
+                    <div class="user-text">
+                        <h4>Jane Doe</h4>
+                        <p>ID: STD-2045</p>
+                    </div>
+                    <div class="user-avatar">JD</div>
+                </div>
+            </header>
+
+            <!-- My Courses Section -->
+            <section id="courses" class="dash-section">
+                <h2 class="dash-section-header"><i class="fa-solid fa-graduation-cap gradient-text"></i> Enrolled
+                    Courses</h2>
+                <div class="dashboard-grid">
+                    <div class="dash-card">
+                        <h3>Painting Masterclass</h3>
+                        <p><strong>Batch:</strong> Weekend Evening (4 PM - 6 PM)</p>
+                        <p><strong>Instructor:</strong> Sudeep Sir</p>
+                        <div style="margin-top: 15px;">
+                            <span class="status-badge status-paid">Active</span>
+                        </div>
+                    </div>
+                    <div class="dash-card">
+                        <h3>Sketching Fundamentals</h3>
+                        <p><strong>Batch:</strong> Mon-Wed-Fri (10 AM - 12 PM)</p>
+                        <p><strong>Instructor:</strong> Sudeep Sir</p>
+                        <div style="margin-top: 15px;">
+                            <span class="status-badge status-paid">Active</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Post Artwork Section -->
+            <section id="artwork" class="dash-section">
+                <h2 class="dash-section-header"><i class="fa-solid fa-palette gradient-text"></i> Post Artwork</h2>
+                <div class="artwork-form-container">
+                    <form onsubmit="event.preventDefault(); alert('Artwork submitted for review successfully!');">
+                        <div class="artwork-upload-area">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <h3>Drag & Drop your artwork</h3>
+                            <p style="color: var(--text-secondary); margin-top: 10px;">or click to browse from your
+                                files (JPG, PNG max 5MB)</p>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 20px;">
+                            <label style="display:block; margin-bottom: 8px; color: var(--text-secondary);">Artwork
+                                Title</label>
+                            <input type="text" placeholder="E.g., Sunset Landscape" required
+                                style="width: 100%;background: transparent; border: 1px solid var(--border-color); color: white; padding: 12px 15px; border-radius: 8px; font-size: 1rem; outline: none;">
+                        </div>
+                        <button type="submit" class="cta-btn primary-btn"><i class="fa-solid fa-paper-plane"></i> Submit
+                            Artwork</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Receipts Section -->
+            <section id="receipts" class="dash-section">
+                <h2 class="dash-section-header"><i class="fa-solid fa-file-invoice-dollar gradient-text"></i> Payment
+                    Receipts</h2>
+                <div class="dash-table-wrapper">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Invoice ID</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>INV-2045-03</td>
+                                <td>Oct 05, 2026</td>
+                                <td>Painting Masterclass Fee (Oct)</td>
+                                <td>₹999</td>
+                                <td><span class="status-badge status-paid">Paid</span></td>
+                                <td><button class="btn-small" onclick="alert('Downloading Receipt...')"><i
+                                            class="fa-solid fa-download"></i> PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td>INV-2045-02</td>
+                                <td>Sep 05, 2026</td>
+                                <td>Painting Masterclass Fee (Sep)</td>
+                                <td>₹999</td>
+                                <td><span class="status-badge status-paid">Paid</span></td>
+                                <td><button class="btn-small" onclick="alert('Downloading Receipt...')"><i
+                                            class="fa-solid fa-download"></i> PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td>INV-2045-01</td>
+                                <td>Aug 01, 2026</td>
+                                <td>Registration & First Month</td>
+                                <td>₹1248</td>
+                                <td><span class="status-badge status-paid">Paid</span></td>
+                                <td><button class="btn-small" onclick="alert('Downloading Receipt...')"><i
+                                            class="fa-solid fa-download"></i> PDF</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <footer style="margin-top: 50px; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                &copy; 2026 AS Art Academy. All rights reserved.
+            </footer>
+        </main>
+    </div>
+
+    <!-- Smooth Scrolling for Sidebar -->
+    <script>
+        document.querySelectorAll('.dashboard-nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelectorAll('.dashboard-nav a').forEach(a => a.classList.remove('active'));
+                this.classList.add('active');
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

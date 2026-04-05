@@ -1,0 +1,337 @@
+/* Dashboard Specific Styles using AS Art Academy Design System */
+
+:root {
+    --sidebar-width: 280px;
+    --card-bg: rgba(14, 22, 38, 0.8);
+    --border-color: rgba(212, 175, 55, 0.1);
+}
+
+body {
+    background-color: var(--bg-dark);
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.dashboard-sidebar {
+    width: var(--sidebar-width);
+    background: rgba(10, 10, 12, 0.95);
+    border-right: 1px solid var(--border-color);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.dashboard-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.dashboard-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.dashboard-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav a.active {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.dashboard-nav a.active {
+    border-left: 3px solid var(--accent-1);
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.1), transparent);
+}
+
+.dashboard-logout {
+    margin-top: auto;
+    text-decoration: none;
+    color: #ff4d4d;
+    padding: 14px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.dashboard-logout:hover {
+    background: rgba(255, 77, 77, 0.1);
+}
+
+.dashboard-main {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    padding: 50px;
+    background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.03), transparent 50%);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dashboard-header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-text {
+    text-align: right;
+}
+
+.user-text h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.user-text p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Sections */
+.dash-section {
+    margin-bottom: 60px;
+}
+
+.dash-section-header {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Dashboard Cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.dash-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.dash-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(212, 175, 55, 0.4);
+}
+
+.dash-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.dash-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Post Artwork Form */
+.artwork-form-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(15px);
+}
+
+.artwork-upload-area {
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 25px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.artwork-upload-area:hover {
+    border-color: var(--accent-1);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.artwork-upload-area i {
+    font-size: 3.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+/* Tables */
+.dash-table-wrapper {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+}
+
+.dash-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dash-table th,
+.dash-table td {
+    padding: 20px 25px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dash-table th {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.dash-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dash-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-paid {
+    background: rgba(57, 224, 155, 0.1);
+    color: #39E09B;
+    border: 1px solid rgba(57, 224, 155, 0.2);
+}
+
+.status-upcoming {
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent-1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.btn-small:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+    .dashboard-sidebar {
+        width: 80px;
+        padding: 20px 10px;
+    }
+
+    .dashboard-brand span,
+    .dashboard-brand text,
+    .dashboard-nav a span,
+    .dashboard-logout span,
+    .user-text {
+        display: none;
+    }
+
+    .dashboard-nav a {
+        justify-content: center;
+        padding: 15px;
+    }
+
+    .dashboard-nav a i {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .dashboard-brand {
+        font-size: 2rem;
+    }
+
+    .dashboard-main {
+        margin-left: 80px;
+        padding: 30px 20px;
+    }
+}
